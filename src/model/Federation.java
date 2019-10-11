@@ -54,6 +54,11 @@ public class Federation {
 	public void addParticipant(Participant a) {
 		
 	}
-	
 
+	public void searchParticipant(String id) {
+	
+		
+	}
+	
+	
 }

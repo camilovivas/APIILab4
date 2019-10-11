@@ -1,10 +1,21 @@
 package ui;
 
+import java.util.Scanner;
+
+import model.*;
+
 public class Main {
+	private Scanner reader;
+	private Federation relation;
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Main m = new Main();
 	}
+	
+	public Main() {
+		
+	}
+	
+	
 
 }
