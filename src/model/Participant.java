@@ -35,5 +35,13 @@ public class Participant extends Viewer {
 		}
 	}
 	
+	public int weightTree() {
+		int cant = 0;
+		if(right !=null || left !=null) {
+			cant = 1+right.weightTree()+left.weightTree();	
+		}
+		return cant;
+	}
+	
 
 }

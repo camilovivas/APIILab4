@@ -68,5 +68,14 @@ public class Federation {
 		
 	}
 	
+	public int weight() {
+		if(vacio() == true) {
+			return 0;
+		}
+		else {
+			return raiz.weightTree();
+		}
+	}
+	
 	
 }
