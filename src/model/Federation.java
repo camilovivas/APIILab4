@@ -1,6 +1,15 @@
 package model;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Federation {
+	
 	private Participant raiz;
 	private Inscribed first;
 	
@@ -23,6 +32,28 @@ public class Federation {
 		this.first = first;
 	}
 	
+	public void chargerWorld(String url) throws IOException, ParseException {
+		String persona = "";
+		File archive = new File(url);
+		BufferedReader reader = new BufferedReader(new FileReader(archive));
+		String text;
+		while((text = reader.readLine())!= null) {
+			persona = text;
+			String [] campos = persona.split(",");
+			Participant a = new Participant(campos[0], campos[1], campos[2], campos[3], campos[4], campos[5], changeDate(campos[6]));
+			addParticipant(a);
+		}
+		reader.close();
+	}
+	public Date changeDate(String date) throws ParseException {
+		SimpleDateFormat change = new SimpleDateFormat("dd/mm/yyyy");
+		Date fecha = change.parse(date);
+		return fecha;
+	}
+	
+	public void addParticipant(Participant a) {
+		
+	}
 	
 
 }

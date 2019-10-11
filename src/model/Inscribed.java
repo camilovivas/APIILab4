@@ -6,8 +6,8 @@ public class Inscribed extends Viewer {
 	private Inscribed beforeInscribed; 
 	private Inscribed nextInscribed;
 
-	public Inscribed(String id, String lastName, String email, String gender, String country, Date dateBorn) {
-		super(id, lastName, email, gender, country, dateBorn);
+	public Inscribed(String id, String name, String lastName, String email, String gender, String country, Date dateBorn) {
+		super(id, name, lastName, email, gender, country, dateBorn);
 	}
 	
 	public Inscribed getBeforeInscribed() {

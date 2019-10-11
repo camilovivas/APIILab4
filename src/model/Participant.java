@@ -6,8 +6,8 @@ public class Participant extends Viewer {
 	private Participant beforeParticipant;
 	private Participant nextParticipant;
 
-	public Participant(String id, String lastName, String email, String gender, String country, Date dateBorn) {
-		super(id, lastName, email, gender, country, dateBorn);
+	public Participant(String id, String name, String lastName, String email, String gender, String country, Date dateBorn) {
+		super(id, name, lastName, email, gender, country, dateBorn);
 	}
 
 	public Participant getBeforeParticipant() {
