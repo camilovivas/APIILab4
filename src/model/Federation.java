@@ -73,7 +73,7 @@ public class Federation {
 			return 0;
 		}
 		else {
-			return raiz.weightTree();
+			return 1+raiz.weightTree();
 		}
 	}
 	

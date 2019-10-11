@@ -28,17 +28,30 @@ public class Participant extends Viewer {
 
 	public void add(Participant a) {
 		if(a.getId().compareTo(getId())<0) {
-			right.add(a);
+			if(right == null) {
+				right = a;
+			}
+			else {
+				right.add(a);
+			}
 		}
 		if(a.getId().compareTo(getId())>0) {
-			left.add(a);
+			if(left == null) {
+				left = a;
+			}
+			else {
+				left.add(a);				
+			}
 		}
 	}
 	
 	public int weightTree() {
 		int cant = 0;
-		if(right !=null || left !=null) {
-			cant = 1+right.weightTree()+left.weightTree();	
+		if(right !=null ) {
+			cant += 1+right.weightTree();				
+		}	
+		if(left !=null) {
+			cant += 1+left.weightTree();	
 		}
 		return cant;
 	}
