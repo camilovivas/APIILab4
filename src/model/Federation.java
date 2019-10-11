@@ -31,6 +31,9 @@ public class Federation {
 	public void setFirst(Inscribed first) {
 		this.first = first;
 	}
+	public boolean vacio() {
+		return (raiz==null);
+	}
 	
 	public void chargerWorld(String url) throws IOException, ParseException {
 		String persona = "";
@@ -52,7 +55,12 @@ public class Federation {
 	}
 	
 	public void addParticipant(Participant a) {
-		
+		if(vacio() == true) {
+			raiz = a;
+		}
+		else {
+			raiz.add(a);
+		}
 	}
 
 	public void searchParticipant(String id) {
