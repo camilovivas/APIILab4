@@ -66,6 +66,7 @@ public class Federation {
 			while(!ya) {
 				if(next.getNextInscribed() == null) {
 					next.setNextInscribed(a);
+					a.setBeforeInscribed(next);
 					ya = true;
 				}
 				else {
