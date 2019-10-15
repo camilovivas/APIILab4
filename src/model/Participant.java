@@ -27,7 +27,10 @@ public class Participant extends Viewer {
 	}
 
 	public void add(Participant a) {
-		if(a.getId().compareTo(getId())<0) {
+		if(a.getId().compareTo(getId())==0) {
+			left = a;
+		}
+		if(a.getId().compareTo(getId())>0) {
 			if(right == null) {
 				right = a;
 			}
@@ -35,7 +38,7 @@ public class Participant extends Viewer {
 				right.add(a);
 			}
 		}
-		if(a.getId().compareTo(getId())>0) {
+		if(a.getId().compareTo(getId())<0) {
 			if(left == null) {
 				left = a;
 			}
@@ -43,6 +46,27 @@ public class Participant extends Viewer {
 				left.add(a);				
 			}
 		}
+	}
+
+	
+	public Participant search(String id) {
+		Participant retorno = null;
+		if(id.compareTo(getId())==0) {
+			retorno = this;
+		}
+		else {
+			if(id.compareTo(getId())>0) {
+				if(right != null) {
+					retorno = right.search(id);
+				}
+			}
+			if(id.compareTo(getId())<0) {
+				if(left != null) {
+					retorno = left.search(id);
+				}
+			}
+		}
+		return retorno;
 	}
 	
 	public int weightTree() {

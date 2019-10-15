@@ -13,8 +13,9 @@ public class Main {
 	}
 	
 	public Main() {
-		
+		reader = new Scanner(System.in);
 	}
+	
 	
 	
 
