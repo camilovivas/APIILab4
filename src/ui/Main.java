@@ -21,10 +21,11 @@ public class Main {
 	
 	public int menu() {
 		int option = 0;
-		System.out.println("");		
-		System.out.println("");		
-		System.out.println("");		
-		System.out.println("");		
+		System.out.println("ingrese el numero de la opcion que deseda realizar");		
+		System.out.println("1. buscar a un participante");		
+		System.out.println("2. buscar a una persona inscrita");		
+		System.out.println("3. ver participantes de un pais");		
+		System.out.println("3. ver inscritos de un pais");		
 		
 		return option;
 	}

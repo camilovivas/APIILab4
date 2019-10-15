@@ -25,5 +25,18 @@ public class Inscribed extends Viewer {
 	public void setNextInscribed(Inscribed nextInscribed) {
 		this.nextInscribed = nextInscribed;
 	}
+	
+	public Inscribed search(String id) {
+		Inscribed found = null;
+		if(nextInscribed != null) {
+			if(id.compareTo(nextInscribed.getId())== 0) {
+				found = nextInscribed;
+			}
+			else {
+				found = nextInscribed.search(id);
+			}
+		}
+		return found;
+	}
 
 }

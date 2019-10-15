@@ -43,14 +43,14 @@ class FederationTest {
 		Participant actual = a.searchParticipant("1");
 		assertEquals("soyYo", actual.getName());
 	}
-	@Test
+//	@Test
 	public void changeWorldTest() throws IOException, ParseException {
 		Federation a = new Federation();
 		a.chargerWorld("./docs/espectadores.csv");
 		int actual = a.weight();
 		assertEquals(100000, actual);
 	}
-	@Test
+//	@Test
 	public void changeWorld2Test() throws IOException, ParseException {
 		Federation a = new Federation();
 		a.chargerWorld("./docs/espectadores.csv");
@@ -82,6 +82,19 @@ class FederationTest {
 		a.addInscribed(a3);
 		int actual = a.quantityInscribed();
 		assertEquals(3, actual);
+	}
+	
+	@Test
+	public void searchInscribed() {
+		Federation a = new Federation(); 
+		Inscribed a1 = new Inscribed("2","Hester","Luciani","hluciani0@rediff.com","Female","Philippines", null);
+		Inscribed a2 = new Inscribed("1","Hester","Luciani","hluciani0@rediff.com","Female","Philippines", null);
+		Inscribed a3 = new Inscribed("3","soyYo","Luciani","hluciani0@rediff.com","Female","Philippines", null);
+		a.addInscribed(a1);
+		a.addInscribed(a2);
+		a.addInscribed(a3);
+		Inscribed actual = a.searchInscribed("3");
+		assertEquals("soyYo", actual.getName());
 	}
 	
 }

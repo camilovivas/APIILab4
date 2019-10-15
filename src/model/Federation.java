@@ -113,6 +113,20 @@ public class Federation {
 		return found;
 	}
 	
+	public Inscribed searchInscribed(String id) {
+		Inscribed found = null;
+		if(first != null) {
+			if(first.getId().compareTo(id)== 0) {
+				found = first;
+			}
+			else {
+				found = first.search(id);
+			}
+		}
+		
+		return found;
+	}
+	
 	public String showFoundParticipant(String id) {
 		Participant found  = searchParticipant(id);
 		String retorno = "";
