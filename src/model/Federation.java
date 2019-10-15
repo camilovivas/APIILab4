@@ -124,6 +124,9 @@ public class Federation {
 			retorno += found.getCountry();
 			retorno += found.getDateBorn().toString();
 		}
+		else {
+			retorno += "no se encontro";
+		}
 		return retorno;
 	}
 	

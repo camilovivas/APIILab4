@@ -14,9 +14,32 @@ public class Main {
 	
 	public Main() {
 		reader = new Scanner(System.in);
+		relation = new Federation();
+		int i = menu();
+		option(i);
 	}
 	
+	public int menu() {
+		int option = 0;
+		System.out.println("");		
+		System.out.println("");		
+		System.out.println("");		
+		System.out.println("");		
+		
+		return option;
+	}
 	
+	public void option(int i) {
+		switch(i) {
+		case 1:
+			
+		case 2:
+			
+		case 3:
+			
+		case 4:	
+		}
+	}
 	
 
 }
