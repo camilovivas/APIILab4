@@ -80,5 +80,21 @@ public class Participant extends Viewer {
 		return cant;
 	}
 	
+	public Participant searchCountry(String country) {
+		Federation e = new Federation();
+		if(country.compareToIgnoreCase(getCountry())==0) {
+			e.addParticipant(this);
+		}
+		else {
+			if(right != null) {
+				e.addParticipant(right.searchCountry(country));
+			}
+			if(left !=null) {
+				e.addParticipant(left.searchCountry(country));
+			}
+		}
+		return e.getRaiz();
+	}
+	
 
 }

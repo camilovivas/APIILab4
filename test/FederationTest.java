@@ -97,4 +97,23 @@ class FederationTest {
 		assertEquals("soyYo", actual.getName());
 	}
 	
+	@Test
+	public void treeParticipantCountry() {
+		Federation a = new Federation(); 
+		Participant a1 = new Participant("2","Hester","Luciani","hluciani0@rediff.com","Female","Philippines", null);
+		Participant a12 = new Participant("2","Hester","Luciani","hluciani0@rediff.com","Female","Colombia", null);
+		Participant a2 = new Participant("1","Hester","Luciani","hluciani0@rediff.com","Female","Colombia", null);
+		Participant a22 = new Participant("1","Hester","Luciani","hluciani0@rediff.com","Female","Philippines", null);
+		Participant a3 = new Participant("3","soyYo","Luciani","hluciani0@rediff.com","Female","Philippines", null);
+		Participant a32 = new Participant("3","soyYo","Luciani","hluciani0@rediff.com","Female","Colombia", null);
+		a.addParticipant(a1);
+		a.addParticipant(a2);
+		a.addParticipant(a3);
+		a.addParticipant(a12);
+		a.addParticipant(a22);
+		a.addParticipant(a32);
+		Participant actual = a.treeParticipantCountry("Colombia");
+		assertEquals(2, actual.weightTree());
+	}
+	
 }

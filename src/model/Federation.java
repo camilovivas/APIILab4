@@ -154,5 +154,16 @@ public class Federation {
 		}
 	}
 	
+	public Participant treeParticipantCountry(String country) {
+		Federation e = new Federation();
+		if(raiz.getCountry().compareToIgnoreCase(country)==0) {
+			e.addParticipant(raiz);
+		}
+		else {
+			e.addParticipant(raiz.searchCountry(country));
+		}
+		
+		return e.getRaiz();
+	}
 	
 }
