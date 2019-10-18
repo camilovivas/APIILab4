@@ -118,5 +118,17 @@ public class Participant extends Viewer {
 		}
 		return msg;
 	}
+	
+	public String print() {
+		String s = "";
+		if(left!= null) {
+			s+="|_______"+left.getId()+left.print();
+		}
+		
+		if(right!= null) {
+			s+="|_______"+right.getId()+right.print();
+		}
+		return s;
+	}
 
 }

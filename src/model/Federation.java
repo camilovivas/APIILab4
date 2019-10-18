@@ -145,6 +145,23 @@ public class Federation {
 		return retorno;
 	}
 	
+	public String showFoundInscribed(String id) {
+		Inscribed found = searchInscribed(id);
+		String retorno = "";
+		if(found != null) {
+			retorno += found.getName();
+			retorno += found.getLastName();
+			retorno += found.getEmail();
+			retorno += found.getGender();
+			retorno += found.getCountry();
+			retorno += found.getDateBorn().toString();
+		}
+		else {
+			retorno += "no se encontro";
+		}
+		return retorno;
+	}
+	
 	public int weight() {
 		if(vacio() == true) {
 			return 0;
@@ -164,6 +181,17 @@ public class Federation {
 		}
 		
 		return e.getRaiz();
+	}
+	
+	public String printTree(String country) {
+		String tree = "";
+		Participant e =  treeParticipantCountry(country);
+		if(e != null) {
+			tree += e.getId();
+			tree += e.print();
+		}
+		
+		return tree;
 	}
 	
 }
