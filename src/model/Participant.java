@@ -28,7 +28,12 @@ public class Participant extends Viewer {
 
 	public void add(Participant a) {
 		if(a.getId().compareTo(getId())==0) {
-			left = a;
+			if(left == null) {
+				left = a;
+			}
+			else {
+				left.add(a);				
+			}
 		}
 		if(a.getId().compareTo(getId())>0) {
 			if(right == null) {
@@ -96,28 +101,6 @@ public class Participant extends Viewer {
 		return e.getRaiz();
 	}
 	
-	public String findCountry(String theCountry) {
-		String msg = "";
-		if(getCountry().compareTo(theCountry) == 0) {
-			msg += toString()+"\n";
-			msg += "|______";
-			if(left != null && left.getCountry().equals(theCountry)) {
-				msg += left.toString();
-			}
-			msg += "\n";
-			if(right != null && right.getCountry().equals(theCountry)) {
-				msg += right.toString();
-			}
-			msg += "\n";
-		}
-		if(left != null) {
-			msg += left.findCountry(theCountry);
-		}
-		if(right != null) {
-			msg += right.findCountry(theCountry);
-		}
-		return msg;
-	}
 	
 	public String print() {
 		String s = "";

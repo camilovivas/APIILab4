@@ -116,4 +116,14 @@ class FederationTest {
 		assertEquals(2, actual.weightTree());
 	}
 	
+//	@Test
+	public void treeParticipantCountry2() throws IOException, ParseException {
+		Federation a = new Federation(); 
+		a.chargerWorld("./docs/espectadores.csv");
+		Participant actual = a.treeParticipantCountry("Guatemala");
+		assertEquals(2, actual.weightTree());
+	}
+	
+	
+	
 }
