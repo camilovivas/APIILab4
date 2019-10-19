@@ -62,7 +62,8 @@ public class Main {
 			break;
 		case 4:	
 			System.out.println("escriba el pais");
-			String country1 = reader.next();			
+			String country1 = reader.next();
+			System.out.println(relation.printList(country1));
 			break;
 		}
 	}

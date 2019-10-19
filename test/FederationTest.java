@@ -98,13 +98,13 @@ class FederationTest {
 	}
 	
 	@Test
-	public void treeParticipantCountry() {
+	public void treeParticipantCountrTest() {
 		Federation a = new Federation(); 
-		Participant a1 = new Participant("2","Hester","Luciani","hluciani0@rediff.com","Female","Philippines", null);
+		Participant a1 = new Participant("2","Hester","Luciani","hluciani0@rediff.com","Female","Philippines1", null);
 		Participant a12 = new Participant("2","Hester","Luciani","hluciani0@rediff.com","Female","Colombia", null);
 		Participant a2 = new Participant("1","Hester","Luciani","hluciani0@rediff.com","Female","Colombia", null);
-		Participant a22 = new Participant("1","Hester","Luciani","hluciani0@rediff.com","Female","Philippines", null);
-		Participant a3 = new Participant("3","soyYo","Luciani","hluciani0@rediff.com","Female","Philippines", null);
+		Participant a22 = new Participant("1","Hester","Luciani","hluciani0@rediff.com","Female","Philippines2", null);
+		Participant a3 = new Participant("3","soyYo","Luciani","hluciani0@rediff.com","Female","Philippines3", null);
 		Participant a32 = new Participant("3","soyYo","Luciani","hluciani0@rediff.com","Female","Colombia", null);
 		a.addParticipant(a1);
 		a.addParticipant(a2);
@@ -113,7 +113,27 @@ class FederationTest {
 		a.addParticipant(a22);
 		a.addParticipant(a32);
 		Participant actual = a.treeParticipantCountry("Colombia");
-		assertEquals(2, actual.weightTree());
+		assertEquals(3, actual.weightTree());
+	}
+	
+	@Test
+	public void listInscribedCountryTest() {
+		Federation a = new Federation(); 
+		Inscribed a1 = new Inscribed("2","Hester","Luciani","hluciani0@rediff.com","Female","Philippines", null);
+		Inscribed a2 = new Inscribed("1","Hester","Luciani","hluciani0@rediff.com","Female","Colombia", null);
+		Inscribed a3 = new Inscribed("3","soyYo","Luciani","hluciani0@rediff.com","Female","Philippines", null);
+		Inscribed a4 = new Inscribed("3","soyYo","Luciani","hluciani0@rediff.com","Female","Colombia", null);
+		Inscribed a5 = new Inscribed("3","soyYo","Luciani","hluciani0@rediff.com","Female","Colombia", null);
+		a.addInscribed(a1);
+		a.addInscribed(a2);
+		a.addInscribed(a3);
+		a.addInscribed(a4);
+		a.addInscribed(a5);
+		Federation b = new Federation();
+		Inscribed actual = a.listInsccribedCountry("Colombia");
+		b.addInscribed(actual);
+		assertEquals(3, b.quantityInscribed());
+		
 	}
 	
 //	@Test

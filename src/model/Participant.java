@@ -92,10 +92,10 @@ public class Participant extends Viewer {
 		}
 		else {
 			if(right != null) {
-				e.addParticipant(right.searchCountry(country));
+				right.searchCountry(country);
 			}
 			if(left !=null) {
-				e.addParticipant(left.searchCountry(country));
+				left.searchCountry(country);
 			}
 		}
 		return e.getRaiz();

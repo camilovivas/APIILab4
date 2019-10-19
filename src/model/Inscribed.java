@@ -38,5 +38,14 @@ public class Inscribed extends Viewer {
 		}
 		return found;
 	}
+	
+	public String print() {
+		String s = "";
+		if(nextInscribed != null){
+			s+= " ---> "+nextInscribed.getId()+nextInscribed.print();
+		}
+				
+		return s;
+	}
 
 }

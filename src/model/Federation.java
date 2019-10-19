@@ -183,6 +183,24 @@ public class Federation {
 		return e.getRaiz();
 	}
 	
+	public Inscribed listInsccribedCountry(String country) {
+		Federation e = new Federation();
+		Inscribed next = first;
+		Inscribed temp = null;
+		while(next!=null) {
+			if(next.getCountry().compareTo(country)==0) {
+				temp = next;
+				next = next.getNextInscribed();
+				temp.setNextInscribed(null);
+				e.addInscribed(temp);
+				}
+			else {
+				next =  next.getNextInscribed();
+			}
+		}
+		return e.getFirst();
+	}
+	
 	public String printTree(String country) {
 		String tree = "";
 		Participant e =  treeParticipantCountry(country);
@@ -192,6 +210,13 @@ public class Federation {
 		}
 		
 		return tree;
+	}
+	
+	public String printList(String country) {
+		String s = "";
+		Inscribed a = listInsccribedCountry(country);
+		s+= a.getId()+a.print();
+		return s;
 	}
 	
 }

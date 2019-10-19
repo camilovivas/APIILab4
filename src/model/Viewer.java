@@ -25,11 +25,6 @@ public class Viewer {
 	public String getId() {
 		return id;
 	}
-	@Override
-	public String toString() {
-		return "Viewer [id=" + id + ", name=" + name + ", lastName=" + lastName + ", email=" + email + ", gender="
-				+ gender + ", country=" + country + ", dateBorn=" + dateBorn + "]";
-	}
 
 	public void setId(String id) {
 		this.id = id;
