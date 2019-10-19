@@ -43,6 +43,8 @@ class FederationTest {
 		Participant actual = a.searchParticipant("1");
 		assertEquals("soyYo", actual.getName());
 	}
+	
+//	ESTAN COMENTADAS POR QUE SE DEMORA 2 MINUTOS CADA METODO
 //	@Test
 	public void changeWorldTest() throws IOException, ParseException {
 		Federation a = new Federation();
