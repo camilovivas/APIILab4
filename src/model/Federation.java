@@ -132,11 +132,11 @@ public class Federation {
 		Participant found  = searchParticipant(id);
 		String retorno = "";
 		if(found != null) {
-			retorno += found.getName();
-			retorno += found.getLastName();
-			retorno += found.getEmail();
-			retorno += found.getGender();
-			retorno += found.getCountry();
+			retorno += found.getName()+"\n";
+			retorno += found.getLastName()+"\n";
+			retorno += found.getEmail()+"\n";
+			retorno += found.getGender()+"\n";
+			retorno += found.getCountry()+"\n";
 			retorno += found.getDateBorn().toString();
 		}
 		else {
@@ -149,11 +149,11 @@ public class Federation {
 		Inscribed found = searchInscribed(id);
 		String retorno = "";
 		if(found != null) {
-			retorno += found.getName();
-			retorno += found.getLastName();
-			retorno += found.getEmail();
-			retorno += found.getGender();
-			retorno += found.getCountry();
+			retorno += found.getName()+"\n";
+			retorno += found.getLastName()+"\n";
+			retorno += found.getEmail()+"\n";
+			retorno += found.getGender()+"\n";
+			retorno += found.getCountry()+"\n";
 			retorno += found.getDateBorn().toString();
 		}
 		else {
